@@ -1,9 +1,11 @@
-package euler;
+package problems;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import api.Maths;
 
 /*  A palindromic number reads the same both ways.
  * 
@@ -29,7 +31,7 @@ public class Problem4 {
 
 				// If the result of i * j is a palindrome then it is added to
 				// the list of palindromes.
-				if (isPalindromicNumber(i * j))
+				if (Maths.isPalindromicNumber(i * j))
 					palindromeList.add(i * j);
 
 			}
@@ -57,29 +59,5 @@ public class Problem4 {
 				+ "ms");
 	}
 
-	public static boolean isPalindromicNumber(int i) {
-
-		// This converts i to a string.
-		final String number = String.valueOf(i);
-
-		// This creates a list to hold the characters of the number.
-		List<Character> digitsCorrectWay = new ArrayList<Character>();
-
-		// This populates the list with the characters.
-		for (char c : number.toCharArray()) {
-			digitsCorrectWay.add(c);
-		}
-
-		// This creates a clone of the initial list that is holding the
-		// characters.
-		List<Character> digitsReversed = new ArrayList<Character>(
-				digitsCorrectWay);
-
-		// This reverses the copy of the list.
-		Collections.reverse(digitsReversed);
-
-		// If the characters of the number are equal both reversed and the
-		// normal way round then return true.
-		return digitsCorrectWay.equals(digitsReversed);
-	}
+	
 }

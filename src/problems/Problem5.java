@@ -1,4 +1,6 @@
-package euler;
+package problems;
+
+import api.Maths;
 
 /*2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
@@ -22,7 +24,7 @@ public class Problem5 {
 			// Declaring a new integer array was not necessary, but I did it
 			// purely so that the values specified are more obvious when
 			// reading.
-			if (isEvenlyDivisibleBy(i, new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9,
+			if (Maths.isEvenlyDivisibleBy(i, new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9,
 					10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 })) {
 
 				// If i is evenly divisible by the numbers 1 to 20 then the
@@ -40,16 +42,5 @@ public class Problem5 {
 				+ "ms");
 	}
 
-	public static boolean isEvenlyDivisibleBy(int value, int... integers) {
-
-		// The integers specified are looped through, returning false if the
-		// value divided by any of these gives a remainder.
-		for (int i : integers) {
-			if (value % i != 0) {
-				return false;
-			}
-		}
-		return true;
-
-	}
+	
 }

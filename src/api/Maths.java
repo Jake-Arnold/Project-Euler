@@ -1,5 +1,9 @@
 package api;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Maths {
 
 	/**
@@ -25,16 +29,22 @@ public class Maths {
 	}
 
 	/**
-	 * @param i
+	 * @param l
 	 *            integer to check if prime.
 	 * @return true if integer given prime.
 	 * @author Jake Arnold
 	 */
 
-	public static boolean isPrime(int i) {
-		return i != 2 && i % 2 != 0;
-	}
+	public static boolean isPrime(long l) {
 
+		for (long i = 2; i < l - 1; i++) {
+			if (l % i == 0)
+				return false;
+		}
+
+		return true;
+	}
+	
 	/**
 	 * @param i
 	 *            integer to check if square number.
@@ -92,10 +102,44 @@ public class Maths {
 		}
 		return c;
 	}
+	
+	public static boolean isPalindromicNumber(int i) {
 
-	public static void main(String[] args) {
-		for (int i = 1; i < 11; i++) {
-			System.out.println(fibonacciNumber(i));
+		// This converts i to a string.
+		final String number = String.valueOf(i);
+
+		// This creates a list to hold the characters of the number.
+		List<Character> digitsCorrectWay = new ArrayList<Character>();
+
+		// This populates the list with the characters.
+		for (char c : number.toCharArray()) {
+			digitsCorrectWay.add(c);
 		}
+
+		// This creates a clone of the initial list that is holding the
+		// characters.
+		List<Character> digitsReversed = new ArrayList<Character>(
+				digitsCorrectWay);
+
+		// This reverses the copy of the list.
+		Collections.reverse(digitsReversed);
+
+		// If the characters of the number are equal both reversed and the
+		// normal way round then return true.
+		return digitsCorrectWay.equals(digitsReversed);
 	}
+	
+	public static boolean isEvenlyDivisibleBy(int value, int... integers) {
+
+		// The integers specified are looped through, returning false if the
+		// value divided by any of these gives a remainder.
+		for (int i : integers) {
+			if (value % i != 0) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+
 }

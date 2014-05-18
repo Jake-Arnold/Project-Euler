@@ -1,4 +1,6 @@
-package euler;
+package problems;
+
+import api.Maths;
 
 /*The prime factors of 13195 are 5, 7, 13 and 29.
 
@@ -32,7 +34,7 @@ public class Problem3 {
 
 				// This checks if i is prime as we are looking for the largest
 				// prime factor.
-				if (isPrime(i)) {
+				if (Maths.isPrime(i)) {
 
 					// This outputs the first value found as being a factor and
 					// prime. The first factor in this case will always be the
@@ -53,13 +55,5 @@ public class Problem3 {
 
 	}
 
-	public static boolean isPrime(long l) {
-
-		for (long i = 2; i < l - 1; i++) {
-			if (l % i == 0)
-				return false;
-		}
-
-		return true;
-	}
+	
 }

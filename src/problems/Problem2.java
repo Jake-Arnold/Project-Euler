@@ -1,6 +1,7 @@
 package problems;
 
-import api.Maths;
+
+import com.rakeyjakey.maths.Maths;
 
 public class Problem2 {
 

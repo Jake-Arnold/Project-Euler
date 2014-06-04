@@ -1,15 +1,17 @@
 package problems;
 
+
+import com.rakeyjakey.maths.Maths;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import api.Maths;
 
 /*  A palindromic number reads the same both ways.
  * 
- *  The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+ *  The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 ï¿½ 99.
  *  Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
